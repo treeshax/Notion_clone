@@ -1,34 +1,30 @@
-import { useState } from "react";
-import Sidebar from "./components/sidebar";
-import Home from "./components/home";
-import Editor from "./components/editor";
-import "./App.css";
+import React from 'react'
+import LightRays from './components/Hero'
+import './index.css'
+
 
 function App() {
-  const [pages, setPages] = useState([]);
-  const [currentPage, setCurrentPage] = useState(null);
-
   return (
-    <div className="app">
-      <Sidebar 
-        pages={pages} 
-        setPages={setPages} 
-        setCurrentPage={setCurrentPage}
-      />
-
-      <div className="main">
-        {currentPage ? (
-          <Editor page={currentPage} />
-        ) : (
-          <Home 
-            page={currentPage}
-            pages={pages}
-            setPages={setPages}
-            setCurrentPage={setCurrentPage}/>
-        )}
+    <>
+      <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#ffffff"
+          raysSpeed={1}
+          lightSpread={0.5}
+          rayLength={3}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0}
+          distortion={0}
+          className="custom-rays"
+          pulsating={false}
+          fadeDistance={1}
+          saturation={1}
+        />
       </div>
-    </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
