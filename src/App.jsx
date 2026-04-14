@@ -1,31 +1,30 @@
-import {useState} from "react"
-import Sidebar from "./components/sidebar"
-import Editor from "./components/editor"
-import "./App.css"
+import { useState } from "react";
+import Sidebar from "./components/sidebar";
+import Home from "./components/home";
+import Editor from "./components/editor";
+import "./App.css";
 
 function App() {
-  const [pages, setPages] = useState([
-    {id: 1, title: "page 1", content: ""}
-  ])
-
-  const [currentPage, setcurrentPage] = useState(pages[0])
+  const [pages, setPages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(null);
 
   return (
-    <div>
-      <h1>Notion</h1>
-      
-      <Sidebar
-      pages = {pages}
-      setPages={setPages}
-      currentPage = {currentPage}
-      setcurrentPage={setcurrentPage} 
+    <div className="app">
+      <Sidebar 
+        pages={pages} 
+        setPages={setPages} 
+        setCurrentPage={setCurrentPage}
       />
 
-      <Editor 
-      currentPage = {currentPage}
-      />
+      <div className="main">
+        {currentPage ? (
+          <Editor page={currentPage} />
+        ) : (
+          <Home />
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

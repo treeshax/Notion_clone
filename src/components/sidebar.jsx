@@ -1,30 +1,32 @@
-function Sidebar({ pages, setPages, setcurrentPage }) {
+function Sidebar({ pages, setPages, setCurrentPage }) {
 
-    const addPage = () => {
-        const newPage = {
-            id: Date.now(),
-            title: "New Page",
-            content: ""
-        }
-        setPages([...pages, newPage])
-    }
+  const addPage = () => {
+    const newPage = {
+      id: Date.now(),
+      title: "Untitled",
+      content: ""
+    };
 
-    return (
-        <div className="sidebar">
-            <h2>Pages</h2>
+    setPages([...pages, newPage]);
+  };
 
-            {pages.map((page) => (
-                <div 
-                key={page.id}
-                onClick={() => setcurrentPage(page)}
-                >
-                    {page.title}
-                </div>
-            ))}
+  return (
+    <div className="sidebar">
+      <h2>Workspace</h2>
 
-            <button onClick={addPage}>Add Page</button>
+      <button onClick={addPage}>+ New Page</button>
+
+      {pages.map((page) => (
+        <div 
+          key={page.id}
+          className="page-item"
+          onClick={() => setCurrentPage(page)}
+        >
+          {page.title}
         </div>
-    )
+      ))}
+    </div>
+  );
 }
 
-export default Sidebar
+export default Sidebar;
