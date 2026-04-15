@@ -1,5 +1,5 @@
 import React from 'react'
-import LightRays from './components/Hero'
+import LineWaves from './components/Hero'
 import Navbar from './components/ui/Navbar'
 import SpotlightCard from './components/ui/CardProps'
 import './index.css'
@@ -10,20 +10,20 @@ function App() {
       <Navbar />
       <div className="hero-section">
         <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#ffffff"
-            raysSpeed={1}
-            lightSpread={0.5}
-            rayLength={3}
-            followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0}
-            distortion={0}
-            className="custom-rays"
-            pulsating={false}
-            fadeDistance={1}
-            saturation={1}
+          <LineWaves
+            speed={0.3}
+            innerLineCount={32}
+            outerLineCount={36}
+            warpIntensity={1}
+            rotation={-45}
+            edgeFadeWidth={0}
+            colorCycleSpeed={1}
+            brightness={0.2}
+            color1="#ffffff"
+            color2="#ffffff"
+            color3="#ffffff"
+            enableMouseInteraction
+            mouseInfluence={2}
           />
         </div>
 
