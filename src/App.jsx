@@ -4,7 +4,8 @@ import Navbar from './components/ui/Navbar'
 import SpotlightCard from './components/ui/CardProps'
 import './index.css'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
-import Login from './components/login' 
+import Login from './components/pages/login' 
+import Dashboard from './components/Dashboard'
 
 function Home() {
   return (
@@ -72,11 +73,12 @@ function App() {
   const location = useLocation()
   return (
     <>
-      {location.pathname !== "/login" && <Navbar />}
-
+      {/* {location.pathname !== "/login" && <Navbar />} */}
+      {location.pathname === "/" && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>
   )

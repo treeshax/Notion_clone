@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './login.css'
 
 function Login() {
@@ -6,6 +7,7 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   const handleSignup = () => {
   if (!email || !password) {
@@ -30,7 +32,7 @@ function Login() {
 
   const handleLogin = () => {
   if (!email || !password) {
-    alert('Please enter email and password')
+    setError('Please enter email and password')
     return
   }
 
@@ -41,9 +43,13 @@ function Login() {
     storedUser.email === email &&
     storedUser.password === password
   ) {
+    setError('')
     alert('Login successful!')
+
+    // Redirect after login
+    navigate('/dashboard')
   } else {
-    alert('Invalid credentials')
+    setError('Invalid credentials')
   }
 }
 
