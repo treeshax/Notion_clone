@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from '../components/pages/sidebar'
 import Editor from '../components/pages/editor'
-import './dashboard.css'
+import './Dashboard.css'
 
 function Dashboard() {
   const [pages, setPages] = useState([
