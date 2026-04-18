@@ -3,6 +3,7 @@ import LineWaves from './components/Hero'
 import Navbar from './components/ui/Navbar'
 import SpotlightCard from './components/ui/CardProps'
 import GlareHover from './components/ui/GlareHover'
+import Comparison from './components/ui/Comparison'
 import './index.css'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import Login from './components/pages/login' 
@@ -75,6 +76,9 @@ function Home() {
           </SpotlightCard>
         </GlareHover>
       </section>
+
+      {/* Comparison Section */}
+      <Comparison />
     </>
   )
 }
