@@ -1,39 +1,63 @@
-import Card from "./card";
+import Card from "../components/Card"; // ✅ fix path
+import { useNavigate } from "react-router-dom";
 
 function Home({ pages, setPages, setCurrentPage }) {
-  const getGreeting = () => {
-  const hour = new Date().getHours();
+  const navigate = useNavigate();
 
-  if (hour < 12) return "Good morning";
-  if (hour < 18) return "Good afternoon";
-  return "Good evening";
-};
-const addPage = () => {
-  const newPage = {
-    id: Date.now(),
-    title: "Untitled",
-    content: [""]
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good morning";
+    if (hour < 18) return "Good afternoon";
+    return "Good evening";
   };
 
-  setPages([...pages, newPage]);
-  setCurrentPage(newPage); 
-};
+  const addPage = () => {
+    const newPage = {
+      id: Date.now(),
+      title: "Untitled",
+      content: [""]
+    };
+
+    setPages([...pages, newPage]);
+    setCurrentPage(newPage);
+
+    // ✅ Redirect to dashboard
+    navigate("/dashboard");
+  };
+
   return (
     <div className="home">
-      <h1>{getGreeting()}</h1>
+      <h1>{getGreeting()}, Harshita 👋</h1>
 
-      <div className="card new-card" onClick={addPage}>
-        <h3>+ New page</h3>
-      </div>
-
+      {/* ✅ Use Card instead of custom div */}
       <div className="card-container">
-        <Card title="Getting Started" />
-        <Card title="Documentation" />
-        <Card title="Community" />
-        <Card title="Support" />
+        <Card 
+          title="+ New Page" 
+          description="Start writing instantly"
+          onClick={addPage}
+        />
+
+        <Card 
+          title="Getting Started" 
+          onClick={() => alert("Guide coming soon")}
+        />
+
+        <Card 
+          title="Documentation" 
+          onClick={() => alert("Docs coming soon")}
+        />
+
+        <Card 
+          title="Community" 
+          onClick={() => alert("Community coming soon")}
+        />
+
+        <Card 
+          title="Support" 
+          onClick={() => alert("Support coming soon")}
+        />
       </div>
     </div>
-    
   );
 }
 

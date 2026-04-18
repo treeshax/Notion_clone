@@ -4,11 +4,13 @@ import Navbar from './components/ui/Navbar'
 import SpotlightCard from './components/ui/CardProps'
 import GlareHover from './components/ui/GlareHover'
 import './index.css'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import Login from './components/pages/login' 
+import Dashboard from './components/Dashboard'
 
-function App() {
+function Home() {
   return (
     <>
-      <Navbar />
       <div className="hero-section">
         <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
           <LineWaves
@@ -34,16 +36,20 @@ function App() {
             Write, plan, and organize without distractions.
           </p>
           <div className="hero-cta">
-            <a href="#get-started" className="btn-primary">Get started for free</a>
+            <Link to="/login" className="btn-primary">
+              Get started for free
+            </Link>
           </div>
         </div>
       </div>
 
+      {/* Features Section */}
       <div className="features-header">
         <span className="features-eyebrow">Why Scribo?</span>
         <h2 className="features-heading">Everything you need.<br />Nothing you don't.</h2>
         <p className="features-subtext">A workspace that adapts to how you think — not the other way around.</p>
       </div>
+
       <section className="features-section">
         <GlareHover glareOpacity={0.15}>
           <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)" className="feature-card">
@@ -69,6 +75,21 @@ function App() {
           </SpotlightCard>
         </GlareHover>
       </section>
+    </>
+  )
+}
+
+function App() {
+  const location = useLocation()
+  return (
+    <>
+      {/* {location.pathname !== "/login" && <Navbar />} */}
+      {location.pathname === "/" && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </>
   )
 }
