@@ -4,6 +4,7 @@ import Navbar from './components/ui/Navbar'
 import SpotlightCard from './components/ui/CardProps'
 import GlareHover from './components/ui/GlareHover'
 import Comparison from './components/ui/Comparison'
+import Footer from './components/ui/Footer'
 import './index.css'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import Login from './components/pages/login' 
@@ -79,6 +80,9 @@ function Home() {
 
       {/* Comparison Section */}
       <Comparison />
+
+      {/* Footer Section */}
+      <Footer />
     </>
   )
 }

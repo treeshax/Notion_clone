@@ -1,0 +1,61 @@
+.footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.footer-title {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.footer-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.footer-tooltip-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.footer-bottom {
+  position: absolute;
+  bottom: 2.5rem;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+
+.copyright-text {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Override WavyBackground h-screen to fit footer */
+.footer .wavy-container {
+  height: 60vh;
+}
