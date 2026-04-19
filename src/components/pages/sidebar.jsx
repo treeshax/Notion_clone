@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './sidebar.css'
+import Logo from '../../../scribo_logo.png'
 
 function Sidebar({ pages, setPages, setCurrentPage, currentPage }) {
   const [workspaceName, setWorkspaceName] = useState("");
@@ -32,9 +33,12 @@ function Sidebar({ pages, setPages, setCurrentPage, currentPage }) {
         <Link to="/" className="home-link">← Home</Link>
         <div className="workspace-section">
           {isSubmitted ? (
-            <h2 className="workspace-title clickable" onClick={() => setIsSubmitted(false)}>
-              {workspaceName}
-            </h2>
+            <div className="sidebar-brand">
+              <img src={Logo} alt="Scribo" className="sidebar-logo" />
+              <h2 className="workspace-title clickable" onClick={() => setIsSubmitted(false)}>
+                {workspaceName}
+              </h2>
+            </div>
           ) : (
             <form onSubmit={handleWorkspaceName} className="workspace-form">
               <input 

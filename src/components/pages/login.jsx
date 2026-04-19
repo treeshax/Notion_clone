@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GridScan } from '../ui/GridScan'
 import './login.css'
+import Logo from '../../../scribo_logo.png'
 
 function Login() {
   const [isSignup, setIsSignup] = useState(false)
@@ -60,6 +61,7 @@ function Login() {
       <div className="login-container">
         <div className="login-box">
           <div className="login-header">
+            <img src={Logo} alt="Scribo Logo" className="login-logo" />
             <h1>{isSignup ? 'Create Account' : 'Welcome Back'}</h1>
             <p className="login-subtext">
               {isSignup ? 'Start your journey with Scribo' : 'Login to your workspace'}

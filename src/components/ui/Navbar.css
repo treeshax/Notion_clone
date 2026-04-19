@@ -1,16 +1,34 @@
-.navbar-container {
+.header-nav {
   position: fixed;
-  top: 1.5rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.brand-section, .nav-actions {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-container {
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
   width: max-content;
-  min-width: 400px;
+  pointer-events: auto;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   list-style: none;
   padding: 0.75rem 2rem;
@@ -21,6 +39,18 @@
   border: 1px solid rgba(255, 255, 255, 0.125);
   border-radius: 999px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.logo-img {
+  width: 220px;
+  height: 100px;
+  object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
 }
 
 .nav-item {
@@ -47,7 +77,6 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  margin-left: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -71,5 +100,9 @@
   .nav-item {
     font-size: 0.8rem;
     padding: 0.5rem 0.75rem;
+  }
+  .logo-img {
+    width: 120px;
+    height: 60px;
   }
 }
