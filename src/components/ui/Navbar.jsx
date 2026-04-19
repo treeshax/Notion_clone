@@ -11,7 +11,7 @@ function Navbar() {
                     <Link to="/dashboard" className='nav-item'>Workspace</Link>
                     <li className='nav-item'>Contact</li>
                     <li className='nav-item'>ScriboAI</li>
-                    <a href="https://github.com/Tushar-Singla/Scribo" target="_blank" rel="noopener noreferrer" className='nav-item github-star-btn'>
+                    <a href="https://github.com/treeshax/Notion_clone" target="_blank" rel="noopener noreferrer" className='nav-item github-star-btn'>
                         <span className="star-icon">⭐</span> Star on GitHub
                     </a>
                 </ul>
