@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GridScan } from '../ui/GridScan'
+import { ArrowLeft } from 'lucide-react'
 import './login.css'
 import Logo from '../../../scribo_logo.png'
 
@@ -48,6 +49,7 @@ function Login() {
   }
 
   return (
+    <>
     <div className="login-page">
       <div className="login-background">
         <GridScan 
@@ -57,6 +59,10 @@ function Login() {
           scanDuration={3.0}
           scanOpacity={0.3}
         />
+        <button onClick={() => navigate('/')} className='home-button'>
+          <ArrowLeft size={16} />
+          Back to Home
+        </button>
       </div>
       <div className="login-container">
         <div className="login-box">
@@ -118,6 +124,7 @@ function Login() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
