@@ -57,9 +57,10 @@
 }
 
 .login-logo {
+  display: block;
+  margin: 0 auto 2.5rem;
   width: 120px;
   height: 120px;
-  margin-bottom: 2.5rem;
   object-fit: contain;
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
   animation: logoPulse 4s infinite alternate;
