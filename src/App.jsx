@@ -11,6 +11,7 @@ import './App.css'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import Login from './components/pages/login' 
 import Dashboard from './components/Dashboard'
+import ScriboAI from './components/ScriboAI'
 
 function Home() {
   return (
@@ -97,6 +98,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/scriboai" element={<ScriboAI />} />
       </Routes>
     </>
   )

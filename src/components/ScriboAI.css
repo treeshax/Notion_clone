@@ -1,0 +1,41 @@
+.scribo-ai-page {
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-content {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.get-started-btn {
+  padding: 1.2rem 3.5rem;
+  font-size: 1.25rem;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  color: #000000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  margin-bottom: 0rem;
+}
+
+.get-started-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+.get-started-btn:active {
+  transform: translateY(-2px);
+}
