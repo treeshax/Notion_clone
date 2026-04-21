@@ -13,6 +13,7 @@ import Login from './components/pages/login'
 import Dashboard from './components/Dashboard'
 import ScriboAI from './components/ScriboAI'
 import HomePageBot from './components/ui/HomePageBot'
+import AI from './components/AI'
 
 function Home() {
     return (
@@ -101,6 +102,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/scriboai" element={<ScriboAI />} />
+        <Route path="/ai" element={<AI />} />
       </Routes>
     </>
   )

@@ -20,7 +20,7 @@ export default function ScriboAI() {
       
       
       <div className="ai-content">
-        <button className="get-started-btn" onClick={() => navigate('/')}>
+        <button className="get-started-btn" onClick={() => navigate('/ai')}>
           Get Started
         </button>
       </div>
