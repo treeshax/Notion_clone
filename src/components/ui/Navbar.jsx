@@ -15,6 +15,7 @@ function Navbar() {
                     <Link to="/dashboard" className='nav-item'>Workspace</Link>
                     <li className='nav-item'>Contact</li>
                     <Link to="/scriboai" className='nav-item'>ScriboAI</Link>
+                    <Link className='nav-item' to="/reminders">Reminders</Link>
                 </ul>
             </div>
 
