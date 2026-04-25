@@ -184,7 +184,8 @@ export default function LineWaves({
     const rotationRad = (rotation * Math.PI) / 180;
     program = new Program(gl, {
       vertex: vertexShader,
-      fragment: fragmentShader,
+      fragment: fragmentShader, 
+      
       uniforms: {
         uTime: { value: 0 },
         uResolution: { value: [gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height] },

@@ -3,6 +3,7 @@ import Waves from "./components/ui/Waves";
 import Shuffle from "./components/ui/Shuffle";
 
 
+import { useNavigate } from 'react-router-dom'
 const LEVELS = ["Low", "Medium", "High"];
 
 const levelColors = {
@@ -12,6 +13,7 @@ const levelColors = {
 };
 
 export default function TodoList() {
+  const navigate = useNavigate();
   const [taskName, setTaskName] = useState("");
   const [level, setLevel] = useState("Medium");
   const [tasks, setTasks] = useState([]);
@@ -235,6 +237,7 @@ export default function TodoList() {
             );
           })}
         </div>
+        <button onClick={()=>{navigate("/")}} className="pointer-events-auto mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-300">Home</button>
       </div>
 
       <style>{`
